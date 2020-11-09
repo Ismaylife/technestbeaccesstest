@@ -7,8 +7,15 @@ import org.springframework.stereotype.Repository
 
 @Repository
 class AccountsRepositoryImpl () : AccountsRepository{
+    val accounts = mutableListOf<Account>(
+            Account("Pepe", "EUR", 300.00, true),
+            Account("Juan", "EUR", 250.50, true),
+            Account("Antonio", "EUR", 10.30, false),
+            Account("Jose", "EUR", 1223.30, true)
+    )
+
     override fun addNewAccount(newAccount : Account){
-        accounts + newAccount
+        accounts.add(newAccount)
     }
 
     override fun getReceiver(receiver: String): List<Account> {
@@ -29,12 +36,7 @@ class AccountsRepositoryImpl () : AccountsRepository{
         return accounts.filter { it.name == name }
     }
 
-    val accounts = listOf(
-            Account("Pepe", "EUR", 300.00, true),
-            Account("Juan", "EUR", 250.50, true),
-            Account("Antonio", "EUR", 10.30, false),
-            Account("Jose", "EUR", 1223.30, true)
-    )
+
 }
 
 

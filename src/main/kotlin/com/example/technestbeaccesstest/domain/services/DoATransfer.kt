@@ -2,7 +2,9 @@ package com.example.technestbeaccesstest.domain.services
 
 import com.example.technestbeaccesstest.domain.entities.Account
 import com.example.technestbeaccesstest.domain.repositories.AccountsRepository
+import org.springframework.stereotype.Service
 
+@Service
 class DoATransfer (
     private val accountsRepository : AccountsRepository){
         fun invoke (origin : String, receiver : String, quantity: Double){

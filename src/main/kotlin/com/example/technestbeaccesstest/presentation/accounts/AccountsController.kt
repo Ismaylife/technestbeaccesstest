@@ -1,4 +1,5 @@
 package com.example.technestbeaccesstest.presentation.accounts
+import com.example.technestbeaccesstest.domain.entities.Account
 import com.example.technestbeaccesstest.domain.services.AddNewAccount
 import com.example.technestbeaccesstest.domain.services.CheckAccount
 import com.example.technestbeaccesstest.domain.services.DoATransfer
@@ -27,7 +28,7 @@ class AccountsController{
     @Autowired
     lateinit var checkAccount: CheckAccount
     @PostMapping("/account")
-    fun checkAccount(@RequestParam name: String){
+    fun checkAccount(@RequestParam name: String): List<Account>{
         return checkAccount.invoke(name)
     }
 }
