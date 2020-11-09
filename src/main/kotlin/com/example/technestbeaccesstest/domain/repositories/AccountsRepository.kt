@@ -5,7 +5,8 @@ import com.example.technestbeaccesstest.domain.services.AddNewAccount
 
 interface AccountsRepository {
     fun addNewAccount(account: Account)
-    fun getReciver(receiver: String): List<Account>
+    fun getReceiver(receiver: String): List<Account>
     fun getOrigin(origin: String): List<Account>
-
+    fun getList(): List<Account>
+    fun checkAccount(name: String): List<Account>
 }

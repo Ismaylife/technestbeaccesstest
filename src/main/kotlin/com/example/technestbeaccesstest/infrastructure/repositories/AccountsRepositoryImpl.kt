@@ -11,7 +11,7 @@ class AccountsRepositoryImpl () : AccountsRepository{
         accounts + newAccount
     }
 
-    override fun getReciver(receiver: String): List<Account> {
+    override fun getReceiver(receiver: String): List<Account> {
         val receiver = accounts.filter { it.name == receiver }
         return receiver
     }
@@ -19,6 +19,14 @@ class AccountsRepositoryImpl () : AccountsRepository{
     override fun getOrigin(origin: String): List<Account> {
         val origin = accounts.filter { it.name == origin }
         return origin
+    }
+
+    override fun getList(): List<Account>{
+        return accounts
+    }
+
+    override fun checkAccount( name : String): List<Account>{
+        return accounts.filter { it.name == name }
     }
 
     val accounts = listOf(

@@ -2,7 +2,7 @@ package com.example.technestbeaccesstest.domain.entities
 
 data class Account (
         val name : String,
-        val currency: String,
-        val balance: Double,
+        var currency: String,
+        var balance: Double,
         val treasury: Boolean
 )
